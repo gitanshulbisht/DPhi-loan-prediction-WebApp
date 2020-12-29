@@ -2,12 +2,13 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
-import os
+import pandas as pd
+import joblib
+
 
 #app name
 app = Flask(__name__)
-model = pickle.load(open('loan_model.pkl', 'rb'))
-
+model = joblib.load('loan_model.pkl')
 
 
 #home page
@@ -22,18 +23,19 @@ def predict():
     For rendering results on HTML GUI
     '''
     print("In predict func")
-    labels = ['0', '1']
+    cols = ['ApplicantIncome', 'CoapplicantIncome', 'LoanAmount', 'Loan_Amount_Term', 'Credit_History', 'Gender_Male',
+            'Married_Yes', 'Dependents_1', 'Dependents_2', 'Dependents_3+', 'Education_Not_Graduate', 'Self_Employed_Yes','Property_Area_Semiurban','Property_Area_Urban']
 
     print( request.form.values())
-    features = [str(x) for x in request.form.values()]
+    features = [int(x) for x in request.form.values()]
     print("features :{}".format(features))
     values = [np.array(features)]
     print("values :{}". format(values))
-
-    print("model :{}".format(model))
-    prediction = model.predict(values)
+    df_web=pd.DataFrame(values,columns=cols)
+    print("df_web :{}".format(df_web))
+    prediction = model.predict(df_web)
     print("prediction :{}".format(prediction))
-    result = labels[prediction[0]]
+    result = prediction[0]
     print("result :{}".format(result))
     if(result==0):
         result_text="Rejected"
