@@ -6,6 +6,8 @@ import os
 
 #app name
 app = Flask(__name__)
+model = pickle.load(open('loan_model.pkl', 'rb'))
+
 
 #load the saved model
 def load_model():
@@ -27,12 +29,20 @@ def predict():
 
     print( request.form.values())
     features = [str(x) for x in request.form.values()]
+    print("features :{}".format(features))
     values = [np.array(features)]
-    model = load_model()
+    print("values :{}". format(values))
+
+    print("model :{}".format(model))
     prediction = model.predict(values)
+    print("prediction :{}".format(prediction))
     result = labels[prediction[0]]
-    print(features)
-    return render_template('index.html', output='The loan is {}'.format(result))
+    print("result :{}".format(result))
+    if(result==0):
+        result_text="Rejected"
+    else:
+        result_text="Accepted"
+    return render_template('index.html', output='The loan request is {}'.format(result_text))
 
 
 if __name__ == "__main__":

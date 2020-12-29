@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d6c0f29-42fc-4612-a300-5f0657931877" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loan_model.pkl" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +66,19 @@
       <option name="presentableId" value="Default" />
       <updated>1608807586880</updated>
     </task>
+    <task id="LOCAL-00001" summary="changes in git ignore">
+      <created>1609099397760</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1609099397760</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="changes in git ignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes in git ignore" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="62" key="#Inspections" timestamp="1608809704219">
@@ -78,14 +89,14 @@
       <screen x="0" y="40" width="1366" height="728" />
     </state>
     <state x="137" y="58" width="1092" height="707" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.40.1366.728@0.40.1366.728" timestamp="1608809846772" />
-    <state x="427" y="206" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608983999535">
+    <state x="427" y="206" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1609166179174">
       <screen x="0" y="40" width="1366" height="728" />
     </state>
-    <state x="427" y="206" key="#com.intellij.fileTypes.FileTypeChooser/0.40.1366.728@0.40.1366.728" timestamp="1608983999535" />
-    <state x="413" y="150" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1609047579241">
+    <state x="427" y="206" key="#com.intellij.fileTypes.FileTypeChooser/0.40.1366.728@0.40.1366.728" timestamp="1609166179174" />
+    <state x="413" y="150" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1609229763363">
       <screen x="0" y="40" width="1366" height="728" />
     </state>
-    <state x="413" y="150" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.40.1366.728@0.40.1366.728" timestamp="1609047579241" />
+    <state x="413" y="150" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.40.1366.728@0.40.1366.728" timestamp="1609229763363" />
     <state x="324" y="39" key="CommitChangelistDialog2" timestamp="1609099395256">
       <screen x="0" y="40" width="1366" height="728" />
     </state>
@@ -118,9 +129,9 @@
       <screen x="0" y="40" width="1366" height="728" />
     </state>
     <state x="378" y="227" key="com.intellij.ide.util.TipDialog/0.40.1366.728@0.40.1366.728" timestamp="1609097684973" />
-    <state x="465" y="93" width="672" height="678" key="search.everywhere.popup" timestamp="1609094904831">
+    <state x="473" y="108" width="672" height="678" key="search.everywhere.popup" timestamp="1609168524826">
       <screen x="0" y="40" width="1366" height="728" />
     </state>
-    <state x="465" y="93" width="672" height="678" key="search.everywhere.popup/0.40.1366.728@0.40.1366.728" timestamp="1609094904831" />
+    <state x="473" y="108" width="672" height="678" key="search.everywhere.popup/0.40.1366.728@0.40.1366.728" timestamp="1609168524826" />
   </component>
 </project>
