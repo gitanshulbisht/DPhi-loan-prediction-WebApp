@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3d6c0f29-42fc-4612-a300-5f0657931877" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loan_model.pkl" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model.py" afterDir="false" />
     </list>
@@ -110,10 +109,10 @@
       <screen x="0" y="40" width="1366" height="728" />
     </state>
     <state x="427" y="206" key="#com.intellij.fileTypes.FileTypeChooser/0.40.1366.728@0.40.1366.728" timestamp="1609166179174" />
-    <state x="413" y="150" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1609238559554">
+    <state x="413" y="150" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1609244078961">
       <screen x="0" y="40" width="1366" height="728" />
     </state>
-    <state x="413" y="150" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.40.1366.728@0.40.1366.728" timestamp="1609238559554" />
+    <state x="413" y="150" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.40.1366.728@0.40.1366.728" timestamp="1609244078961" />
     <state x="374" y="40" key="CommitChangelistDialog2" timestamp="1609237730428">
       <screen x="0" y="40" width="1366" height="728" />
     </state>

@@ -8,6 +8,7 @@ from sklearn.impute import SimpleImputer
 import numpy as np
 from sklearn.impute import KNNImputer
 from sklearn.preprocessing import MinMaxScaler
+from sklearn.linear_model import LogisticRegression
 
 #load data
 loan_data  = pd.read_csv("https://raw.githubusercontent.com/dphi-official/Datasets/master/Loan_Data/loan_train.csv" )
@@ -51,7 +52,8 @@ train_data, test_data, train_labels, test_labels = sklearn.model_selection.train
 print(train_data,train_labels)
 
 #Train a model using random forest
-model = sklearn.ensemble.RandomForestClassifier(n_estimators=500)
+#model = sklearn.ensemble.RandomForestClassifier(n_estimators=500)
+model=LogisticRegression(C=1e5)
 model.fit(train_data, train_labels)
 
 #test the model
