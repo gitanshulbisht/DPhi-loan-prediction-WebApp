@@ -9,9 +9,6 @@ app = Flask(__name__)
 model = pickle.load(open('loan_model.pkl', 'rb'))
 
 
-#load the saved model
-def load_model():
-    return pickle.load(open('loan_model.pkl', 'rb'))
 
 #home page
 @app.route('/')
