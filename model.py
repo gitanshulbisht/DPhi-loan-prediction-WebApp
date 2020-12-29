@@ -1,11 +1,9 @@
 #import libraries
-import sklearn
-import sklearn.datasets
+import joblib
 import sklearn.ensemble
 import sklearn.model_selection
-import pickle
+#import pickle
 import pandas as pd
-import os
 from sklearn.impute import SimpleImputer
 import numpy as np
 from sklearn.impute import KNNImputer
@@ -62,4 +60,4 @@ print(result)
 
 #save the model
 filename = 'loan_model.pkl'
-pickle.dump(model, open(filename, 'wb'))
+joblib.dump(model, filename)
