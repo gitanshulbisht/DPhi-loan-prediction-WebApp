@@ -2,43 +2,69 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>Loan Prediction</title>
+    <title>Loan Prediction</title>
+
 </head>
 
 <body>
- <div class="login">
+ <div class="login" >
 	<h1>Welcome to Loan Prediction</h1>
-    <form action="{{ url_for('predict')}}"method="post">
+    <form class="form" action="{{ url_for('predict')}}" method="post">
 
-        ApplicantIncome: <input type="text" name="ApplicantIncome" placeholder="ApplicantIncome" required="required" />
+        Applicant Income: <input type="text" id="applicantIncome" name="applicantIncome" placeholder="Applicant Income" required="required" />
         <br>
-		CoapplicantIncome: <input type="text" name="CoapplicantIncome" placeholder="Married" required="required" />
+		Coapplicant Income: <input type="text" id="coapplicantIncome" name="coapplicantIncome" placeholder="Coapplicant Income" required="required" />
         <br>
-        LoanAmount: <input type="text" name="LoanAmount" placeholder="LoanAmount" required="required" />
+        Loan Amount: <input type="text" id="loanAmount" name="loanAmount" placeholder="Loan Amount" required="required" />
         <br>
-        Loan_Amount_Term: <input type="text" name="Loan_Amount_Term" placeholder="Loan_Amount_Term" required="required" />
+        Loan Amount Term: <input type="text" id="loanAmountTerm" name="loanAmountTerm" placeholder="Loan Amount Term" required="required" />
         <br>
-         Credit_History:<input type="text" name="Credit_History" placeholder="Credit_History" required="required" />
+         Credit History:A record of a borrower's responsible repayment of debts
+                <input type="radio" id="creditHistory1" name="creditHistory" value="1">
+                <label for="creditHistory1">All debts paid</label>
+                <input type="radio" id="creditHistory0" name="creditHistory" value="0">
+                <label for="creditHistory0">Not Paid</label><br>
         <br>
-         Gender_Male: <input type="text" name="Gender_Male" placeholder="Gender_Male" required="required" />
+         Gender:<input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label><br>
+
         <br>
-         Married_Yes: <input type="text" name="Married_Yes" placeholder="Married_Yes" required="required" />
+         Married: <input type="radio" id="marriedYes" name="married" value="Yes">
+                <label for="marriedYes">Yes</label>
+                <input type="radio" id="marriedNo" name="married" value="No">
+                <label for="marriedNo">No</label><br>
         <br>
-        Dependents_1 :<input type="text" name="Dependents_1" placeholder="Dependents_1" required="required" />
+        Dependents:No. of people dependent on the applicant
+                <input type="radio" id="zero" name="dependents" value="0">
+                <label for="zero">0</label>
+                <input type="radio" id="one" name="dependents" value="1">
+                <label for="one">1</label>
+                <input type="radio" id="two" name="dependents" value="2">
+                <label for="two">2</label>
+                <input type="radio" id="three" name="dependents" value="3">
+                <label for="three">3+(3 or more)</label><br>
         <br>
-        Dependents_2 :<input type="text" name="Dependents_2" placeholder="Dependents_2" required="required" />
+         Education: <input type="radio" id="graduate" name="education" value="graduate">
+                <label for="graduate">Graduate</label>
+                <input type="radio" id="notGraduate" name="education" value="notGraduate">
+                <label for="notGraduate">Not Graduate</label><br>
         <br>
-        Dependents_3+: <input type="text" name="Dependents_3+" placeholder="Dependents_3+" required="required" />
+        Self_Employed:<input type="radio" id="selfEmployedYes" name="selfEmployed" value="Yes">
+                <label for="selfEmployedYes">Yes</label>
+                <input type="radio" id="selfEmployedNo" name="selfEmployed" value="selfEmployedNo">
+                <label for="selfEmployedNo">No</label><br>
         <br>
-         Education_Not Graduate: <input type="text" name="Education_Not_Graduate" placeholder="Education_Not Graduate" required="required" />
+        Property Area : <input type="radio" id="rural" name="propertyArea" value="rural">
+                <label for="rural">Rural</label>
+                <input type="radio" id="semiurban" name="propertyArea" value="semiurban">
+                <label for="semiurban">Semiurban</label>
+                <input type="radio" id="urban" name="propertyArea" value="urban">
+                <label for="urban">Urban</label><br>
         <br>
-         Self_Employed_Yes<input type="text" name="Self_Employed_Yes" placeholder="Self_Employed_Yes" required="required" />
-        <br>
-         Property_Area_Semiurban<input type="text" name="Property_Area_Semiurban" placeholder="Property_Area_Semiurban" required="required" />
-        <br>
-         Property_Area_Urban<input type="text" name="Property_Area_Urban" placeholder="Property_Area_Urban" required="required" />
-        <br>
-        <button type="submit" class="btn btn-primary btn-block btn-large">Submit</button>
+
+        <button type="submit"  class="btn btn-primary btn-block btn-large">Submit</button>
 
     </form>
 

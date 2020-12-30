@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d6c0f29-42fc-4612-a300-5f0657931877" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loan_model.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,9 +146,9 @@
       <screen x="0" y="40" width="1366" height="728" />
     </state>
     <state x="378" y="227" key="com.intellij.ide.util.TipDialog/0.40.1366.728@0.40.1366.728" timestamp="1609097684973" />
-    <state x="473" y="108" width="672" height="678" key="search.everywhere.popup" timestamp="1609168524826">
+    <state x="473" y="108" width="672" height="678" key="search.everywhere.popup" timestamp="1609331902031">
       <screen x="0" y="40" width="1366" height="728" />
     </state>
-    <state x="473" y="108" width="672" height="678" key="search.everywhere.popup/0.40.1366.728@0.40.1366.728" timestamp="1609168524826" />
+    <state x="473" y="108" width="672" height="678" key="search.everywhere.popup/0.40.1366.728@0.40.1366.728" timestamp="1609331902031" />
   </component>
 </project>
