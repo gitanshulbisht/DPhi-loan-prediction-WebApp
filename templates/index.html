@@ -3,129 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <title>Loan Prediction</title>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <link href="index.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <style>
+                    body {
+                font-family: 'Lato', sans-serif
+            }
+
+            h1 {
+                margin-bottom: 40px
+            }
+
+            label {
+                color: #333
+            }
+
+            .btn-send {
+                font-weight: 300;
+                text-transform: uppercase;
+                letter-spacing: 0.2em;
+                width: 80%;
+                margin-left: 3px
+            }
+
+            .help-block.with-errors {
+                color: #ff5050;
+                margin-top: 5px
+            }
+
+            .card {
+                margin-left: 10px;
+                margin-right: 10px
+            }
+    </style>
 </head>
 
 <body>
-        <div class="jumbotron">
-                <h1>Welcome to Loan Prediction</h1>
+  <header class="site-header" style="padding: 1em;">
+        <nav class="navbar navbar-expand-md navbar-light bg-primary fixed-top">
+          <div class="container">
+            <a class="navbar-brand mr-4" href="#">Prediction for Loan Approval</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggle">
+              <div class="navbar-nav mr-auto mt-1">
+				<a class="nav-item nav-link text-success" href="{{ url_for('home') }}">Home</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+    </header>
+
+        <div class="container text-center mt-5">
+            <h1>(Accepted/Rejected) Using ML</h1>
+        </div>
+        <div class="row ">
+            <div class="col-lg-7 mx-auto">
+                <div class="card mt-2 mx-auto p-4 bg-light">
+                    <div class="card-body bg-light">
+                        <div class="container">
+                            <form id="contact-form" role="form" class="form" action="{{ url_for('predict')}}" method="post">
+                                <div class="controls">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                               <label for="applicantIncome">Applicant Income:</label>  <input type="text" id="applicantIncome" name="applicantIncome" placeholder="Applicant Income" required="required" data-error="Applicant Income is required/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="coapplicantIncome">Coapplicant Income: </label><input type="text" id="coapplicantIncome" name="coapplicantIncome" placeholder="Coapplicant Income" required="required" data-error="Coapplicant Income is required/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                       <label for="loanAmount">Loan Amount:</label> <input type="text" id="loanAmount" name="loanAmount" placeholder="Loan Amount" required="required" data-error="" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="loanAmountTerm"> Loan Amount Term:</label> <input type="text" id="loanAmountTerm" name="loanAmountTerm" placeholder="Loan Amount Term" required="required" data-error="Loan Amount Term is required"/>
+                                                    </div>
+                                                </div>
+                                    </div>
+                                     Credit History:A record of a borrower's responsible repayment of debts
+                                            <div class="checkbox">
+                                                <input type="radio" id="creditHistory1" name="creditHistory" value="1">
+                                                <label for="creditHistory1">All debts paid</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <input type="radio" id="creditHistory0" name="creditHistory" value="0">
+                                                <label for="creditHistory0">Not Paid</label><br>
+                                            </div>
+                                    <br>
+                                     Gender:
+                                        <div class="checkbox">
+                                            <input type="radio" id="male" name="gender" value="male">
+                                            <label for="male">Male</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <input type="radio" id="female" name="gender" value="female">
+                                            <label for="female">Female</label><br>
+                                        </div>
+
+
+                                    <br>
+                                     Married:
+                                        <div class="checkbox">
+                                            <input type="radio" id="marriedYes" name="married" value="Yes">
+                                            <label for="marriedYes">Yes</label>
+                                        </div>
+                                        <div class="checkbox">
+                                          <input type="radio" id="marriedNo" name="married" value="No">
+                                            <label for="marriedNo">No</label>
+                                            <br>
+                                        </div>
+
+                                    <br>
+                                    Dependents:No. of people dependent on the applicant
+                                            <div class="checkbox">
+                                                <input type="radio" id="zero" name="dependents" value="0">
+                                                <label for="zero">0</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <input type="radio" id="one" name="dependents" value="1">
+                                                <label for="one">1</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <input type="radio" id="two" name="dependents" value="2">
+                                                <label for="two">2</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <input type="radio" id="three" name="dependents" value="3">
+                                                <label for="three">3+(3 or more)</label><br>
+                                            </div>
+                                    <br>
+                                     Education:
+                                            <div class="checkbox">
+                                                <input type="radio" id="graduate" name="education" value="graduate">
+                                                <label for="graduate">Graduate</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <input type="radio" id="notGraduate" name="education" value="notGraduate">
+                                                <label for="notGraduate">Not Graduate</label><br>
+                                            </div>
+                                    <br>
+                                    Self_Employed:
+                                            <div class="checkbox">
+                                                <input type="radio" id="selfEmployedYes" name="selfEmployed" value="Yes">
+                                                <label for="selfEmployedYes">Yes</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <input type="radio" id="selfEmployedNo" name="selfEmployed" value="selfEmployedNo">
+                                                <label for="selfEmployedNo">No</label><br>
+                                            </div>
+                                    <br>
+                                    Property Area :
+                                            <div class="checkbox">
+                                                <input type="radio" id="rural" name="propertyArea" value="rural">
+                                                <label for="rural">Rural</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <input type="radio" id="semiurban" name="propertyArea" value="semiurban">
+                                                <label for="semiurban">Semiurban</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <input type="radio" id="urban" name="propertyArea" value="urban">
+                                                <label for="urban">Urban</label><br>
+                                            </div>
+
+                                    <br>
+
+                                    <button type="submit"  class="btn btn-primary btn-block btn-large">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <form class="form" action="{{ url_for('predict')}}" method="post">
-            <div class="form-group">
-            Applicant Income: <input type="text" id="applicantIncome" name="applicantIncome" placeholder="Applicant Income" required="required" />
-            <br>
-            </div>
-            <div class="form-group">
-            Coapplicant Income: <input type="text" id="coapplicantIncome" name="coapplicantIncome" placeholder="Coapplicant Income" required="required" />
-            <br>
-            </div>
-            <div class="form-group">
-            Loan Amount: <input type="text" id="loanAmount" name="loanAmount" placeholder="Loan Amount" required="required" />
-            <br>
-            </div>
-            <div class="form-group">
-            Loan Amount Term: <input type="text" id="loanAmountTerm" name="loanAmountTerm" placeholder="Loan Amount Term" required="required" />
-            <br>
-            </div>
-
-             Credit History:A record of a borrower's responsible repayment of debts
-                    <div class="checkbox">
-                        <input type="radio" id="creditHistory1" name="creditHistory" value="1">
-                        <label for="creditHistory1">All debts paid</label>
-                    </div>
-                    <div class="checkbox">
-                        <input type="radio" id="creditHistory0" name="creditHistory" value="0">
-                        <label for="creditHistory0">Not Paid</label><br>
-                    </div>
-            <br>
-             Gender:
-                <div class="checkbox">
-                    <input type="radio" id="male" name="gender" value="male">
-                    <label for="male">Male</label>
-                </div>
-                <div class="checkbox">
-                    <input type="radio" id="female" name="gender" value="female">
-                    <label for="female">Female</label><br>
-                </div>
-
-
-            <br>
-             Married:
-                <div class="checkbox">
-                    <input type="radio" id="marriedYes" name="married" value="Yes">
-                    <label for="marriedYes">Yes</label>
-                </div>
-                <div class="checkbox">
-                  <input type="radio" id="marriedNo" name="married" value="No">
-                    <label for="marriedNo">No</label>
-                    <br>
-                </div>
-
-            <br>
-            Dependents:No. of people dependent on the applicant
-                    <div class="checkbox">
-                        <input type="radio" id="zero" name="dependents" value="0">
-                        <label for="zero">0</label>
-                    </div>
-                    <div class="checkbox">
-                        <input type="radio" id="one" name="dependents" value="1">
-                        <label for="one">1</label>
-                    </div>
-                    <div class="checkbox">
-                        <input type="radio" id="two" name="dependents" value="2">
-                        <label for="two">2</label>
-                    </div>
-                    <div class="checkbox">
-                        <input type="radio" id="three" name="dependents" value="3">
-                        <label for="three">3+(3 or more)</label><br>
-                    </div>
-            <br>
-             Education:
-                    <div class="checkbox">
-                        <input type="radio" id="graduate" name="education" value="graduate">
-                        <label for="graduate">Graduate</label>
-                    </div>
-                    <div class="checkbox">
-                        <input type="radio" id="notGraduate" name="education" value="notGraduate">
-                        <label for="notGraduate">Not Graduate</label><br>
-                    </div>
-            <br>
-            Self_Employed:
-                    <div class="checkbox">
-                        <input type="radio" id="selfEmployedYes" name="selfEmployed" value="Yes">
-                        <label for="selfEmployedYes">Yes</label>
-                    </div>
-                    <div class="checkbox">
-                        <input type="radio" id="selfEmployedNo" name="selfEmployed" value="selfEmployedNo">
-                        <label for="selfEmployedNo">No</label><br>
-                    </div>
-            <br>
-            Property Area :
-                    <div class="checkbox">
-                        <input type="radio" id="rural" name="propertyArea" value="rural">
-                        <label for="rural">Rural</label>
-                    </div>
-                    <div class="checkbox">
-                        <input type="radio" id="semiurban" name="propertyArea" value="semiurban">
-                        <label for="semiurban">Semiurban</label>
-                    </div>
-                    <div class="checkbox">
-                        <input type="radio" id="urban" name="propertyArea" value="urban">
-                        <label for="urban">Urban</label><br>
-                    </div>
-
-            <br>
-
-            <button type="submit"  class="btn btn-primary btn-block btn-large">Submit</button>
-
-    </form>
-
    <br>
    <br>
-   {{ output }}
+
 
 
 </body>
