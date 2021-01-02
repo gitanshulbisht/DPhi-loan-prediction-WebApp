@@ -41,24 +41,20 @@
 </head>
 
 <body>
-  <header class="site-header" style="padding: 1em;">
+<header class="site-header" style="padding: 1em;">
         <nav class="navbar navbar-expand-md navbar-light bg-primary fixed-top">
           <div class="container">
-            <a class="navbar-brand mr-4" href="#">Prediction for Loan Approval</a>
+            <a class="navbar-brand mr-4" href="#">Loan Request Prediction</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarToggle">
-              <div class="navbar-nav mr-auto mt-1">
-				<a class="nav-item nav-link text-success" href="{{ url_for('home') }}">Home</a>
-              </div>
-            </div>
           </div>
         </nav>
-    </header>
+</header>
 
         <div class="container text-center mt-5">
             <h1>(Accepted/Rejected) Using ML</h1>
+            <h3>{{ output }}</h3>
         </div>
         <div class="row ">
             <div class="col-lg-7 mx-auto">
@@ -187,11 +183,5 @@
                 </div>
             </div>
         </div>
-
-   <br>
-   <br>
-
-
-
 </body>
 </html>

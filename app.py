@@ -99,7 +99,7 @@ def predict():
         result_text="Rejected"
     else:
         result_text="Accepted"
-    return render_template('Prediction.html', output='The loan request is {}'.format(result_text))
+    return render_template('Index.html', output='The loan request is {}'.format(result_text))
 
 
 if __name__ == "__main__":
