@@ -1,23 +1,29 @@
 #import libraries
 #import pickle
 import numpy as np
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, render_template,flash
+from flask_cors import CORS, cross_origin
 import pandas as pd
 import joblib
+import os
 
 
 #app name
 app = Flask(__name__)
+CORS(app, support_credentials=True)
+app.config['SECRET_KEY'] = os.urandom(24)
 model = joblib.load('loan_model.pkl')
 
 
 #home page
 @app.route('/')
+@cross_origin(supports_credentials=True)
 def home():
     return render_template('index.html')
 
 #predict the result and return it
 @app.route('/predict',methods=['POST'])
+@cross_origin(supports_credentials=True)
 def predict():
     '''
     For rendering results on HTML GUI
@@ -97,9 +103,12 @@ def predict():
     print("result :{}".format(result))
     if(result==0):
         result_text="Rejected"
+        category = 'danger'
     else:
         result_text="Accepted"
-    return render_template('index.html', output='The loan request is {}'.format(result_text))
+        category = 'success'
+    flash(result_text, category=category)
+    return render_template('index.html')
 
 
 if __name__ == "__main__":
