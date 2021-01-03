@@ -24,5 +24,8 @@ A basic logistic regression model is used for the above binary classification.
 Flask is the frame work used for deployment app .
 Pickeled model is used for the prediction and the result is then returned to the fornt-end.
 
-# UI
+# UI(Client-Side)
 HTML,CSS,BootStrap,Jinja Templates
+
+# BackEnd
+Python,Flask
